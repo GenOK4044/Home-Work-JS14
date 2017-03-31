@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>DZ-13-14-js</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+
+</head>
+<body>
+	<div class="test">
+		<h1>Тест по программированию</h1>
+		<form>
+			<script type="text/html" id="questions-generate">
+				<% for (var i =0; i<data.length; i++) { %>
+				    <h4><%=data[i].question%></h4>
+						<% for (var k =0; k<data[i].answer.length; k++) { %>
+							<label><input type="checkbox" name="checkbox<%=i%>" value="<%=data[i].answer[k]%>"> <%=data[i].answer[k]%></label>	
+						<%}; %> 
+				<%}; %>  
+			<button type="submit" class="check btn btn-primary" id="go">Проверить мои результаты</button>				
+			<button class="btn btn-primary" type="reset">Сбросить</button>				
+			</script>
+		</form>
+	</div>
+
+<div id="openModal" class="modalDialog" style="display: none;">
+    <div>
+        <span class="clo">X</span>
+        <h2>Результаты прохождения теста:</h2>
+        <p>Поздравляем,Вы успешно прошли тест!</p>
+    </div>
+</div>
+<div id="openModal" class="modalDialogError" style="display: none;">
+    <div>
+        <span class="clo">X</span>
+        <h2>Результаты прохождения теста:</h2>
+        <p>Увы,Вы провалили тест, попробуйте еще раз!</p>
+    </div>
+</div>
+
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/tmpl.js"></script>
+</body>
+</html>
+		
+
+
+
+
+
